@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">RTSP Viewer</string>
+    <string name="main_title">Cameras</string>
+    <string name="cam_add">Add camera</string>
+    <string name="cam_name">Name *</string>
+    <string name="cam_name_hint">New camera</string>
+    <string name="cam_url">Address *</string>
+    <string name="cam_url_hint">rtsp://user:password@ip:port/path</string>
+    <string name="channel_url">Channel 2</string>
+    <string name="add_channel">Add channel</string>
+    <string name="del_channel">Delete channel</string>
+    <string name="ch1_btn">C1</string>
+    <string name="ch2_btn">C2</string>
+    <string name="sftp_url">SFTP address</string>
+    <string name="sftp_url_hint">sftp://user:password@ip/folder</string>
+    <string name="cam_protocol">Protocol</string>
+    <string name="cam_tcp">TCP</string>
+    <string name="cam_udp">UDP</string>
+    <string name="cam_delete">Delete the camera?</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="settings">Settings</string>
+    <string name="back">Back</string>
+    <string name="err_invalid">Invalid value</string>
+    <string name="err_cam_exists">Camera already exists</string>
+    <string name="err_channels_equal">Channel addresses match</string>
+    <string name="files">Files</string>
+    <string name="live">Live</string>
+    <string name="MB">MB</string>
+    <string name="file_prev">Previous file</string>
+    <string name="file_next">Next file</string>
+    <string name="seek_back">Seek back</string>
+    <string name="play_pause">Play/Pause</string>
+    <string name="mute">Mute</string>
+    <string name="group">Group</string>
+    <string name="group_add">Add group</string>
+    <string name="group_name_hint">New group</string>
+    <string name="group_cams">Cameras *</string>
+    <string name="group_delete">Delete the group?</string>
+    <string name="group_warning">
+        Attention! A large number of cameras can significantly reduce the device performance!
+    </string>
+    <string name="err_group_exists">Group already exists</string>
+    <string name="err_group_streams_count">At least %1$d cameras</string>
+    <string name="export_settings">Export settings</string>
+    <string name="import_settings">Import settings</string>
+    <string name="export_password">
+        Password for file encrypt (at least %1$d characters or leave empty):
+    </string>
+    <string name="export_password_confirm">Confirm password:</string>
+    <string name="import_password">Password specified during export:</string>
+    <string name="btn_continue">Continue</string>
+    <string name="about">About</string>
+    <string name="about_text">
+        <![CDATA[
+            <h1>RTSP Viewer, version %1$s</h1><br/>
+            Copyright under MIT license<br/><br/>
+            <a href="https://github.com/todo">Home page</a><br/><br/>
+        ]]>
+    </string>
+    <string name="copy">Copy</string>
+    <string name="paste">Paste</string>
+    <string name="no_wifi">No Wi-Fi</string>
+    <string name="no_internet">No Internet</string>
+    <string name="logs">Device logs</string>
+    <string name="line_count">Lines count:</string>
+    <string name="log_cons_label">Log connections to cameras</string>
+    <string name="log_cons_hint">
+        (Not recommended for security reasons. Valid until the application is closed.)
+    </string>
+</resources>
