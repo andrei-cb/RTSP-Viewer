@@ -17,4 +17,4 @@
 .externalNativeBuild
 .cxx
 local.properties
-fastlane
+/fastlane

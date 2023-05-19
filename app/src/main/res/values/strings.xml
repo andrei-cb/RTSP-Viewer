@@ -56,7 +56,7 @@
         <![CDATA[
             <h1>RTSP Viewer, version %1$s</h1><br/>
             Copyright under MIT license<br/><br/>
-            <a href="https://github.com/todo">Home page</a><br/><br/>
+            <a href="https://github.com/andrei-cb/RTSP-Viewer">Home page</a><br/><br/>
         ]]>
     </string>
     <string name="copy">Copy</string>
