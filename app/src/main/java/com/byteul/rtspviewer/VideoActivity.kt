@@ -51,8 +51,18 @@ class VideoActivity : AppCompatActivity(), MediaPlayer.EventListener {
         stream = StreamData.getById(streamId) ?: return
 
         libVlc = LibVLC(this, ArrayList<String>().apply {
-            if (stream.tcp && remotePath == "")
+            if (stream.tcp && remotePath == "") {
                 add("--rtsp-tcp")
+            }
+            add("--rtsp-frame-buffer-size=500000")
+            add("--network-caching=2000")
+            add("--live-caching==2000")
+            add("--sout-rtp-caching=2000")
+            add("--avcodec-fast")
+            add("--drop-late-frames")
+            add("--avcodec-skiploopfilter=4")
+            //add("-vvv")
+
             if (!StreamData.logConnections)
                 add("--verbose=-1")
         })
@@ -265,6 +275,8 @@ class VideoActivity : AppCompatActivity(), MediaPlayer.EventListener {
                 else
                     Media(libVlc, FileData.getTmpFile(remotePath).absolutePath)
 
+            media.setHWDecoderEnabled(true, true)
+            media.addOption(":no-ts-trust-pcr")
             media.apply {
                 mediaPlayer.media = this
             }.release()

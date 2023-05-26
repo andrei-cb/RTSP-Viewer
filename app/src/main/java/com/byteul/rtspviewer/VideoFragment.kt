@@ -2,10 +2,10 @@ package com.byteul.rtspviewer
 
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.byteul.NetworkState
 import com.byteul.StreamData
 import com.byteul.StreamDataModel
@@ -57,8 +57,18 @@ class VideoFragment : Fragment() {
 
     private fun initFragment() {
         libVlc = LibVLC(requireContext(), ArrayList<String>().apply {
-            if (stream.tcp)
+            if (stream.tcp) {
                 add("--rtsp-tcp")
+            }
+            add("--rtsp-frame-buffer-size=500000")
+            add("--network-caching=2000")
+            add("--live-caching==2000")
+            add("--sout-rtp-caching=2000")
+            add("--avcodec-fast")
+            add("--drop-late-frames")
+            add("--avcodec-skiploopfilter=4")
+            //add("-vvv")
+
             if (!StreamData.logConnections)
                 add("--verbose=-1")
         })
@@ -71,6 +81,8 @@ class VideoFragment : Fragment() {
         try {
             val media = Media(libVlc, Uri.parse(getUrl()))
 
+            media.setHWDecoderEnabled(true, true)
+            media.addOption(":no-ts-trust-pcr")
             media.apply {
                 mediaPlayer.media = this
             }.release()
